@@ -1,0 +1,12 @@
+name: staypositive
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python>=3.8.5
+  - pytorch>=1.7.0
+  - torchvision>=0.8
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - tqdm
