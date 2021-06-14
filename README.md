@@ -51,10 +51,12 @@ jupyter notebook
 ## Cite
 Please cite our work if you find it useful:
 ```latex
-@article{staypositive,
- title={Stay Positive: Non-Negative Image Synthesis for Augmented Reality},
- author={Luo, Katie and Yang, Guandao and Haraldsson, Harald and Xian, Wenqi and Hariharan, Bharath and Belongie, Serge},
- journal={CVPR},
- year={2021}
+@InProceedings{StayPositive_2021,
+    author    = {Luo, Katie and Yang, Guandao and Xian, Wenqi and Haraldsson, Harald and Hariharan, Bharath and Belongie, Serge},
+    title     = {Stay Positive: Non-Negative Image Synthesis for Augmented Reality},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {10050-10060}
 }
 ```
