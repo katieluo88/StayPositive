@@ -2,24 +2,27 @@
 
 This repository contains a PyTorch implementation of the paper:
 
-[Stay Positive: Non-Negative Image Synthesis for Augmented Reality](). 
-<br>
-[Katie Luo*](),
+[Stay Positive: Non-Negative Image Synthesis for Augmented Reality](https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Stay_Positive_Non-Negative_Image_Synthesis_for_Augmented_Reality_CVPR_2021_paper.pdf) \[[Project Page](https://www.cs.cornell.edu/~katieluo/publication/staypositive/)\] \[[Video](https://youtu.be/wYEbZWtQ-T4)\]
+
+[Katie Luo*](https://www.cs.cornell.edu/~katieluo/),
 [Guandao Yang*](http://www.guandaoyang.com), 
 [Wenqi Xian](https://www.cs.cornell.edu/~wenqixian/),
 [Harald Haraldsson](http://haraldharaldsson.com/),
 [Bharath Hariharan](http://home.bharathh.info/),
 [Serge Belongie](http://blogs.cornell.edu/techfaculty/serge-belongie/)
-<br>
+
 (* Equal contribution)
-<br>
 CVPR 2021 (**Oral**)
 
-# Abstract
+<p float="left">
+    <img src="images/banner.gif" height="256"/>
+</p>
+
+## Abstract
 
 In applications such as optical see-through and projector augmented reality, producing images amounts to solving non-negative image generation, where one can only add light to an existing image. Most image generation methods, however, are ill-suited to this problem setting, as they make the assumption that one can assign arbitrary color to each pixel. In fact, naive application of existing methods fails even in simple domains such as MNIST digits, since one cannot create darker pixels by adding light. We know, however, that the human visual system can be fooled by optical illusions involving certain spatial configurations of brightness and contrast. Our key insight is that one can leverage this behavior to produce high quality images with negligible artifacts. For example, we can create the illusion of darker patches by brightening surrounding pixels. We propose a novel optimization procedure to produce images that satisfy both semantic and non-negativity constraints. Our approach can incorporate existing state-of-the-art methods, and exhibits strong performance in a variety of tasks including image-to-image translation and style transfer. 
 
-# Installation
+## Installation
 
 This demo has been tested on the following package versions:
 * Conda (4.8.5)
@@ -36,7 +39,7 @@ conda env create -f environment.yml
 conda activate staypositive
 ```
 
-# Demo
+## Demo
 
 This is a small demo for the CVPR submission _Stay Positive: Non-Negative Image Synthesis for Augmented Reality_.
 The demo requires a simple installation process (presented in the previous section).
