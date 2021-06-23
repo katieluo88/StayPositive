@@ -15,7 +15,7 @@ This repository contains a PyTorch implementation of the paper:
 CVPR 2021 (**Oral**)
 
 <p float="left">
-    <img src="images/banner.gif" height="256"/>
+    <img src="images/banner.gif"/>
 </p>
 
 ## Abstract
