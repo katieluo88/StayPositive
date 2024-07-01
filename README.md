@@ -2,7 +2,7 @@
 
 This repository contains a PyTorch implementation of the paper:
 
-[Stay Positive: Non-Negative Image Synthesis for Augmented Reality](https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Stay_Positive_Non-Negative_Image_Synthesis_for_Augmented_Reality_CVPR_2021_paper.pdf) \[[Project Page]([https://www.cs.cornell.edu/~katieluo/publication/staypositive/](https://katieluo88.github.io/StayPositive/))\] \[[Video](https://youtu.be/wYEbZWtQ-T4)\]
+[Stay Positive: Non-Negative Image Synthesis for Augmented Reality](https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Stay_Positive_Non-Negative_Image_Synthesis_for_Augmented_Reality_CVPR_2021_paper.pdf) \[[Project Page](https://katieluo88.github.io/StayPositive/)\] \[[Video](https://youtu.be/wYEbZWtQ-T4)\]
 
 [Katie Luo*](https://www.cs.cornell.edu/~katieluo/),
 [Guandao Yang*](http://www.guandaoyang.com), 
