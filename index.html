@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>StayPositive</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111714927-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-111714927-1');
+        </script>
+    </head>
+    <body class="container" style="max-width:1000px">
+
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-3'>
+                <div class='col text-center'>
+                    <p class="h2 font-weight-normal">Stay Positive: Non-Negative Image Synthesis for Augmented Reality</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class='row text-center h5 font-weight-bold pl-4 pr-4 mb-4'>
+                <a class="col-md-3" href="http://www.cs.cornell.edu/~katieluo/"><span>Katie Luo*</span></a>
+                <a class="col-md-3" href="http://www.guandaoyang.com"><span>Guandao Yang*</span></a>
+                <a class="col-md-3" href="https://www.cs.cornell.edu/~wenqixian/"><span>Wenqi Xian</span></a>
+                <a class="col-md-3" href="https://haraldharaldsson.com/"><span>Harald Haraldsson</span></a>
+                <a class="col-md-6" href="http://home.bharathh.info/"><span>Bharath Hariharan</span></a>
+                <a class="col-md-6" href="http://blogs.cornell.edu/techfaculty/serge-belongie/"><span>Serge Belongie</span></a>
+            </div>
+
+
+            <!-- affiliations -->
+            <div class='row mt-1 mt-2' >
+                <div class='col text-center'>
+                    <p class="h5 font-weight-light">
+                    <a class="ml-4" href="https://www.cornell.edu/"><span>Cornell University</span></a>
+                    <a class="mr-4 ml-4" href="https://tech.cornell.edu/"><span>Cornell Tech</span></a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- <div class='row text-center h5 font-weight-light pl-4 pr-4 mb-4'>
+                <span class="col-md-12 col-xs-12" style="color:#007bff">*Equal contribution</span>
+            </div> -->
+            <div class='row justify-content-center'  style="position: relative; width: 100%;height: 0;padding-bottom: 25%; margin:0">
+                <img 
+                    class="img-fluid rounded mx-auto d-block" 
+                    src="assets/banner.gif" alt="StayPositive Method Intro" 
+                    style="position:absolute; width:100%; height:100%; top:0px; left:0px;" 
+                >
+			</div>
+
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Luo_Stay_Positive_Non-Negative_Image_Synthesis_for_Augmented_Reality_CVPR_2021_paper.pdf" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="assets/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <a class="h5" href="https://github.com/katieluo88/StayPositive" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="cite.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-9 col-sm-9 col-xs-12'>
+                    <p class='h4 font-weight-bold '>Abstract</p>
+                    <p class="text-break"> 
+                        In applications such as optical see-through and projector augmented reality, producing images amounts to solving non-negative image generation, where one can only add light to an existing image.
+                        Most image generation methods, however, are ill-suited to this problem setting, as they make the assumption that one can assign arbitrary color to each pixel. In fact, naive application of existing methods fails even in simple domains such as MNIST digits, since one cannot create darker pixels by adding light. We know, however, that the human visual system can be fooled by optical illusions involving certain spatial configurations of brightness and contrast. Our key insight is that one can leverage this behavior to produce high quality images with negligible artifacts. For example, we can create the illusion of darker patches by brightening surrounding pixels. We propose a novel optimization procedure to produce images that satisfy both semantic and non-negativity constraints. Our approach can incorporate existing state-of-the-art methods, and exhibits strong performance in a variety of tasks including image-to-image translation and style transfer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Architecture, explaination -->
+        <div>
+            <hr>
+            <!-- <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>The StayPositive Method</p>
+                </div>
+            </div> -->
+
+            <!-- <div class='row mt-3'>
+                <div class='col'>
+                    <img src="assets/checkershadow_illusion.jpg" style="position: absolute;width: 100%;left: 0; top: 0;">
+                </div>
+                <div class='col'>
+                    <img src="assets/koffka_ring.png" style="position: absolute;width: 100%; left: 0; top: 0;">
+                </div>
+                <div class='col-7 mx-3'>
+                    <p class="text-break">
+                        In applications such as optical see-through and projector augmented reality, producing images amounts to solving non-negative image generation, where one can only add light to an existing image.
+
+                        <ol>
+                            <li>Most image generation methods, are <b>ill-suited to this problem setting</b>, since they assume full control of colors for each pixel</li>
+                            <li>Naively, we cannot <b>create darker pixels</b> by adding more light</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='row'>
+                <div class='col'>
+                    <b>Our key insight:</b> Leverage <i>optical illusions</i> to produce high quality images with negligible artifacts, <i>e.g.</i> we can create the illusion of darker patches by brightening surrounding pixels.<br><br>
+                </div>
+            </div> -->
+
+            <div class='row justify-content-center'  style="position: relative; width: 80%;padding-bottom: 22%; margin-left:auto; margin-right:auto;">
+                <img 
+                    class="img-fluid rounded mx-auto d-block" 
+                    src="assets/motivation.png" alt="Motivation" 
+                    style="position:absolute; width:100%; top:0px; left:0px;" 
+                >
+			</div>
+
+            <div class='row'>
+                <div class='col'>
+                    In applications such as optical see-through and projector augmented reality, producing images amounts to solving non-negative image generation, where one can only add light to an existing image. We face two major challenges:
+                    
+                    <br><br>
+
+                    <ol>
+                        <li>Naively, we cannot <b>create darker pixels</b> by adding more light</li>
+                        <li>Most image generation methods, are <b>ill-suited to this problem setting</b>, since they assume full control of colors for each pixel</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col'>
+                    <img src="assets/checkershadow_illusion.jpg" style="position: absolute;width: 100%;left: 0; top: 0;padding-bottom: 22%;">
+                </div>
+                <div class='col'>
+                    <img src="assets/koffka_ring.png" style="position: absolute;width: 100%; left: 0; top: 0;padding-bottom: 22%;">
+                </div>
+                <div class='col-6 mx-3'>
+                    <p class="text-break" style="padding-bottom: 15%;padding-top: 10%;">
+                        <b>Our key insight:</b> Leverage <i>optical illusions</i> to produce high quality images with negligible artifacts, <i>e.g.</i> we can create the illusion of darker patches by brightening surrounding pixels.
+                    </p>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col'>
+                    We use a <b>two stage</b> optimization process. Our framework's overall schematic consists of the <i>image proposal</i> step and <i>semantic-preserving generator</i> step for the residual. The final output is an optical combination between the input and residual, clipped to be physically feasible. We rely on very few parameters for efficient training.
+                </div>
+            </div>
+
+            <!-- <div class='row'>
+                <div class='col'>
+                    <img src="assets/model.gif" style="position: absolute;width: 100%; left: 0; top: 0;">
+                </div>
+            </div> -->
+            <div class='row justify-content-center'  style="position: relative; width: 100%;padding-bottom: 30%; margin:0">
+                <img 
+                    class="img-fluid rounded mx-auto d-block" 
+                    src="assets/framework.png" alt="StayPositive Framework" 
+                    style="position:absolute; width:100%; top:0px; left:0px;" 
+                >
+			</div>
+
+            <!-- <div class='row mt-3'>
+                <div class='col-md-5 col-sm-5 col-xs-12 align-middle mt-5'>
+                    <p class="text-break">
+                    We use two continuous normalizing flows (CNFs) to model the distribution of shapes, while each shape is a distribution of 3D points.
+                    The latent CNF transforms a vector sampled from the shape prior to a latent shape vector.
+                    The point CNF transforms 3D points sampled from the point prior to a point cloud conditioned on a shape vector.
+                    </p>
+                </div>
+                <div class='col-md-7 col-sm-7 col-xs-12 mt-3'>
+                    <img src="assets/inference-architecture.gif" class="img-fluid" alt="architecture">
+                </div>
+            </div> -->
+
+        </div>
+
+        <!-- Results, transformation -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Result Visualizations</p>
+                </div>
+            </div>
+
+            <div class='row'>
+                <div class='col'>
+                    With our two stage framework, we are also able to leverage a variety of state-of-the-art image generation models, including (from left to right): <a href="https://arxiv.org/abs/2003.08791">Anokhin et al. 2020</a>, <a href="https://arxiv.org/abs/1703.06868">AdaIN</a>, <a href="https://arxiv.org/abs/2005.09635">InterFaceGAN</a>, and <a href="https://arxiv.org/abs/1804.04732">MuNIT</a>. Below, we compare our results across a variety of domains. From top to bottom: input (with proposal overlaid), heuristic baseline, our method. Observe that with our framework, we are able to obtain multimodal outputs from the generative model.
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+                <div class='col'>
+                    <img src="assets/results.png" class="img-fluid rounded mx-auto d-block" alt="flow-airplane-4">
+                </div>
+            </div>
+        </div>
+
+        <!-- Video -->
+        <div>
+            <hr>
+
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2 mr-3'>Video Presentation</p>
+                </div>
+            </div>
+
+
+            <!-- <div class='row mt-3 text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:560px">
+                <div class='col ml-1 mr-1' style="position: relative; width: 100%;height: 0;padding-bottom: 56%;">
+                    <video controls src="assets/Presentation_ Non-Negative Image Synthesis for Augmented Reality.mp4" type="video/mp4" frameborder="0" allowfullscreen
+                        style="position: absolute;width: 100%;height: 100%; left: 0; top: 0;">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div> -->
+            <div class='row mt-3 text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:560px">
+                <div class='col ml-1 mr-1' style="position: relative; width: 100%;height: 0;padding-bottom: 56%;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/wYEbZWtQ-T4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                        style="position: absolute;width: 100%;height: 100%; left: 0; top: 0;"
+                    >
+                    </iframe>
+                    <!-- <iframe src="https://www.youtube.com/embed/wYEbZWtQ-T4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute;width: 100%;height: 100%; left: 0; top: 0;"></iframe> -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+                    <p>This work was supported in part by grants from Magic Leap and Facebook AI, and a donation from NVIDIA.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
